@@ -3,10 +3,9 @@ function calculateTotalPrice(array, prop) {
   //  Write code under this line
   let total = 0;
 
-  for (const item of array) {
-    console.log(item);
-    if (item.name === prop) {
-      total += item.price * item.quantity;
+  for (const { name, price, quantity } of array) {
+    if (name === prop) {
+      total += price * quantity;
     }
   }
   return total;
@@ -26,11 +25,11 @@ const products = [
 console.log(calculateTotalPrice(products, "Радар"));
 // 9080
 
-//console.log(calculateTotalPrice(products, 'Сканер'));
+console.log(calculateTotalPrice(products, "Сканер"));
 // 10200
 
-//console.log(calculateTotalPrice(products, 'Захват'));
+console.log(calculateTotalPrice(products, "Захват"));
 // 2400
 
-//console.log(calculateTotalPrice(products, 'Дроид'));
+console.log(calculateTotalPrice(products, "Дроид"));
 // 2800
